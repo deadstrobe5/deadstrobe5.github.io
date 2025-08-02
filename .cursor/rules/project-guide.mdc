@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+description: Core project architecture and development guide for the personal website
+---
+
+# Project Architecture and Development Guide
+
+## Technology Stack & Structure
+- Next.js 15.4 with App Router
+- TypeScript for type safety
+- React 19 with functional components
+- SCSS for styling
+- Static export for GitHub Pages
+
+## Key Directories
+- `/app/` - Next.js App Router pages and layouts
+- `/src/components/` - React components by feature
+- `/src/data/` - Static data files (resume, projects, stats)
+- `/src/static/` - SCSS styles
+- `/public/` - Static assets
+
+## Development Commands
+```bash
+# Start dev server
+npm run dev  # http://localhost:3000
+
+# Build and check
+npm run build  # Production build
+npm run lint   # Run linting
+npm test       # Run tests
+```
+
+## Important Development Rules
+1. All pages must maintain original React site structure
+2. Site uses static export (`output: 'export'`) for GitHub Pages
+3. Client components must use 'use client' directive
+4. Font optimization uses Next.js built-in optimization
+5. TypeScript strict mode is enabled
+
+## Data Management
+- All site content is managed through TypeScript files in `/src/data/`
+- Resume data: [src/data/resume/](mdc:src/data/resume/)
+- Projects: [src/data/projects.ts](mdc:src/data/projects.ts)
+- About info: [src/data/about.ts](mdc:src/data/about.ts)
+- Contact: [src/data/contact.ts](mdc:src/data/contact.ts)
+
+## Styling Guidelines
+- Use SCSS modules with shared variables
+- Main styles in [src/static/css/main.scss](mdc:src/static/css/main.scss)
+- Follow existing component style structure

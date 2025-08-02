@@ -1,0 +1,26 @@
+---
+globs: src/data/*.ts,src/data/*.tsx
+description: Rules for managing site content through data files
+---
+
+# Data Files Guidelines
+
+All site content is managed through TypeScript files in the `src/data` directory:
+
+## Content Structure
+- [about.ts](mdc:src/data/about.ts): Personal bio and information
+- [contact.ts](mdc:src/data/contact.ts): Social media links and contact info
+- [projects.ts](mdc:src/data/projects.ts): Portfolio projects
+- [resume/](mdc:src/data/resume/): Education, skills, and work experience
+
+## Type Safety
+- All data files must export properly typed interfaces
+- Use strict TypeScript checking
+- Follow existing type definitions
+
+## Content Guidelines
+1. Keep content professional and well-formatted
+2. Use markdown for rich text in about.ts
+3. Ensure all links are valid and accessible
+4. Images referenced in projects should exist in `/public/images/`
+5. Dates should follow ISO format (YYYY-MM-DD)
