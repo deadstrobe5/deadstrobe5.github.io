@@ -73,7 +73,7 @@ Here are answers to questions I've been asked at least twice. I've attempted to 
 
    Either set up Google Analytics 4 or remove the `<GoogleAnalytics />` component from `app/layout.tsx`. The site now uses the official `@next/third-parties` package for GA4 integration.
 
-5. How do I configure git? What is nano?
+5. How do I configure git? What is nano?6
 
    Read through [git-scm](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)'s excellent documentation. I recommend setting your default text editor to something you're comfortable with. I like to use vim for writing commit messages.
 

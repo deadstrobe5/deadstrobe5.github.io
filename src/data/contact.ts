@@ -15,17 +15,17 @@ export interface ContactItem {
 
 const data: ContactItem[] = [
   {
-    link: 'https://github.com/yourusername',
+    link: 'https://github.com/deadstrobe5',
     label: 'Github',
     icon: faGithub,
   },
   {
-    link: 'https://www.linkedin.com/in/yourlinkedin',
+    link: 'https://www.linkedin.com/in/afonso-ribeiro-50640716b/',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },
   {
-    link: 'mailto:your.email@example.com',
+    link: 'mailto:afonso.diamantino2@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },
