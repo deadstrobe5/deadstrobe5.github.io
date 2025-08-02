@@ -1,13 +1,10 @@
 import React from 'react';
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
 import PageWrapper from './components/PageWrapper';
 
 export const metadata: Metadata = {
-  description:
-    "Michael D'Angelo is a data scientist, machine learning engineer, and full-stack engineer.",
+  description: "Afonso Ribeiro's personal website and portfolio",
 };
 
 export default function HomePage() {
@@ -17,24 +14,18 @@ export default function HomePage() {
         <header>
           <div className="title">
             <h2>
-              <Link href="/about">About this site</Link>
+              <Link href="/about">Welcome!</Link>
             </h2>
             <p>
-              A beautiful, responsive, statically-generated, react application written with modern
-              Javascript.
+              Software Developer & Tech Enthusiast
             </p>
           </div>
         </header>
         <p>
-          {' '}
-          Welcome to my website. Please feel free to read more <Link href="/about">about me</Link>,
-          or you can check out my <Link href="/resume">resume</Link>,{' '}
-          <Link href="/projects">projects</Link>, view <Link href="/stats">site statistics</Link>,
-          or <Link href="/contact">contact</Link> me.
-        </p>
-        <p>
-          {' '}
-          Source available <a href="https://github.com/mldangelo/personal-site">here</a>.
+          Welcome to my portfolio site. Feel free to read more <Link href="/about">about me</Link>,
+          check out my <Link href="/resume">resume</Link>,{' '}
+          <Link href="/projects">projects</Link>, or{' '}
+          <Link href="/contact">contact</Link> me.
         </p>
       </article>
     </PageWrapper>
