@@ -1,40 +1,31 @@
-export const aboutMarkdown = `# Intro
+export const aboutMarkdown = `# Who Am I? 🤔
 
-Hi! I'm a software developer passionate about building awesome things. I love solving complex problems and creating elegant solutions. Currently, I'm focused on web development and always eager to learn new technologies.
+Just a guy who likes to build stuff and break things. I spend my days crafting software, making AI do my bidding, and diving into cybersecurity challenges. When the code's compiling, you'll find me climbing walls or hunting for dusty old books.
 
-# Skills & Interests
+# What I Do 🛠️
 
-- Full-stack Development
-- Problem Solving
-- Open Source
-- Clean Code
-- Continuous Learning
+- Code stuff that actually works (most of the time)
+- Break into things (ethically, of course) through CTFs
+- Shamelessly automate my stuff with AI overlords so I can slack off while the silicon dudes do the heavy lifting
+- Explore creative ways to earn money online and master the game of life
 
-# I Like
+# Tech & Hacks 🤖
 
-- Coding
-- Technology
-- Gaming
-- Music
-- Learning new things
-- Open source projects
-- Problem solving
+- **AI & LLMs**: Agents, LangChain, RAG, Vector DBs, AutoGen, Offline LLMs
+- **Languages**: Python, TypeScript, Rust, C++, SQL, Bash
+- **Security**: CTFs, Pentesting, Cryptography, Binary Exploitation, Web security
+- **Tools**: Cursor, Git, Docker, Linux, Burp, Wireshark
 
-# Fun Facts
+# When I'm Not Debugging 🎯
 
-- I started coding when I was [age]
-- My favorite programming language is [language]
-- I contribute to open source projects in my spare time
-- I love learning new technologies
-- I enjoy building side projects
+- **Bouldering**: Been climbing for 2 years, crushing V5s and eyeing those V6s
+- **Books & Philosophy**: Collecting classics for under 5€ and dropping random Plato quotes at parties
+- **Volunteering**: Spent several summers rebuilding homes in rural Portugal 
+- **Gaming**: Where it all started - spent so much time gaming, figured I might as well learn to code
+- **Crypto Gambling**: Throwing money at dog coins and hoping for financial freedom
+- **Finding Nirvana**: Meditating my way to enlightenment or digging through mystic texts for illuminati secrets
+- **Music**: Hardcore Radiohead fan when I'm feeling existential, deep house when I need to code in the zone
 
-# I Dream Of
 
-- Building impactful software
-- Contributing to meaningful projects
-- Continuous learning and improvement
-- Collaborating with other developers
-- Making the web a better place
-
-Feel free to reach out if you want to collaborate on a project or just chat about tech!
+Feel free to reach out if you want to chat about tech, climbing, or the meaning of life.
 `;

@@ -48,7 +48,19 @@ const Job: React.FC<JobProps> = ({ data }) => {
       {highlights ? (
         <ul className="points">
           {highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
+            <li key={highlight}>
+              <Markdown
+                options={{
+                  overrides: {
+                    p: {
+                      component: ({ children }) => <>{children}</>,
+                    },
+                  },
+                }}
+              >
+                {highlight}
+              </Markdown>
+            </li>
           ))}
         </ul>
       ) : null}

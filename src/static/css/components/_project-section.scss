@@ -1,0 +1,50 @@
+/* Project Section */
+.project-section {
+  margin-bottom: 2em;
+  
+  .section-title {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid _palette(border);
+    padding-bottom: 0.5em;
+  }
+  
+  .project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .project-item {
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px dashed _palette(border-light);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  .project-header {
+    margin-bottom: 0.5em;
+  }
+  
+  .project-title {
+    font-size: 1.2em;
+    margin: 0;
+    
+    a {
+      color: _palette(accent);
+      border-bottom: dotted 1px transparentize(_palette(accent), 0.5);
+      
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+  
+  .project-desc {
+    margin: 0;
+    font-size: 0.9em;
+  }
+}

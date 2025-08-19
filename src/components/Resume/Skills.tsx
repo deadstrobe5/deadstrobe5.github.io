@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import type { Category, Skill } from '@/data/resume/skills';
 
-import CategoryButton from './Skills/CategoryButton';
 import SkillBar from './Skills/SkillBar';
 
 interface SkillsProps {
@@ -13,50 +12,64 @@ interface SkillsProps {
 }
 
 const Skills: React.FC<SkillsProps> = ({ skills, categories }) => {
-  const initialButtons = Object.fromEntries(
-    [['All', false]].concat(categories.map(({ name }) => [name, false])),
-  );
+  const getSkillsByLevel = () => {
+    const skillsByLevel: { [key: number]: Skill[] } = {};
 
-  const [buttons, setButtons] = useState(initialButtons);
+    // Group skills by competency level
+    skills.forEach((skill) => {
+      if (!skillsByLevel[skill.competency]) {
+        skillsByLevel[skill.competency] = [];
+      }
+      skillsByLevel[skill.competency].push(skill);
+    });
 
-  const handleChildClick = (label: string) => {
-    // Toggle button that was clicked. Turn all other buttons off.
-    const newButtons = Object.keys(buttons).reduce(
-      (obj, key) => ({
-        ...obj,
-        [key]: label === key && !buttons[key],
-      }),
-      {} as Record<string, boolean>,
-    );
-    // Turn on 'All' button if other buttons are off
-    newButtons.All = !Object.keys(buttons).some((key) => newButtons[key]);
-    setButtons(newButtons);
+    // Sort skills within each level alphabetically
+    Object.keys(skillsByLevel).forEach((level) => {
+      skillsByLevel[Number(level)].sort((a, b) => a.title.localeCompare(b.title));
+    });
+
+    return skillsByLevel;
   };
 
-  const getButtons = () =>
-    Object.keys(buttons).map((key) => (
-      <CategoryButton label={key} key={key} active={buttons} handleClick={handleChildClick} />
-    ));
+  const getLevelLabel = (level: number) => {
+    switch (level) {
+      case 5:
+        return 'Expert';
+      case 4:
+        return 'Advanced';
+      case 3:
+        return 'Intermediate';
+      case 2:
+        return 'Beginner';
+      case 1:
+        return 'Novice';
+      default:
+        return 'Unknown';
+    }
+  };
 
-  const getRows = () => {
-    // search for true active categories
-    const actCat = Object.keys(buttons).reduce((cat, key) => (buttons[key] ? key : cat), 'All');
+  const renderSkillGroups = () => {
+    const skillsByLevel = getSkillsByLevel();
 
-    const comparator = (a: Skill, b: Skill) => {
-      let ret = 0;
-      if (a.competency > b.competency) ret = -1;
-      else if (a.competency < b.competency) ret = 1;
-      else if (a.category[0] > b.category[0]) ret = -1;
-      else if (a.category[0] < b.category[0]) ret = 1;
-      else if (a.title > b.title) ret = 1;
-      else if (a.title < b.title) ret = -1;
-      return ret;
-    };
+    return [5, 4, 3, 2, 1]
+      .map((level) => {
+        const levelSkills = skillsByLevel[level];
+        if (!levelSkills || levelSkills.length === 0) return null;
 
-    return skills
-      .sort(comparator)
-      .filter((skill) => actCat === 'All' || skill.category.includes(actCat))
-      .map((skill) => <SkillBar categories={categories} data={skill} key={skill.title} />);
+        return (
+          <div key={level} className="skill-level-group">
+            <h4 className="skill-level-title">
+              {getLevelLabel(level)} ({levelSkills.length})
+            </h4>
+            <div className="skill-level-container">
+              {levelSkills.map((skill) => (
+                <SkillBar categories={categories} data={skill} key={skill.title} />
+              ))}
+            </div>
+          </div>
+        );
+      })
+      .filter(Boolean);
   };
 
   return (
@@ -69,8 +82,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, categories }) => {
           honest overview of my skills.
         </p>
       </div>
-      <div className="skill-button-container">{getButtons()}</div>
-      <div className="skill-row-container">{getRows()}</div>
+      <div className="skills-grouped-container">{renderSkillGroups()}</div>
     </div>
   );
 };

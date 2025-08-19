@@ -11,6 +11,7 @@ const validateText = (text: string): boolean => {
 };
 
 const messages = [
+  'afonso.diamantino2',
   'hi',
   'hello',
   'hola',
@@ -24,7 +25,6 @@ const messages = [
   'please-work-for-us',
   'help',
   'admin',
-  'or-I-really-like-your-website',
   'thanks',
 ];
 
@@ -90,7 +90,7 @@ const EmailLink: React.FC<EmailLinkProps> = ({ loopMessage = false }) => {
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={() => idx < messages.length && setIsActive(true)}
     >
-      <a href={validateText(message) ? `mailto:${message}@mldangelo.com` : ''}>
+      <a href={validateText(message) ? `mailto:${message}@gmail.com` : ''}>
         <span>{message}</span>
         <span>@mldangelo.com</span>
       </a>

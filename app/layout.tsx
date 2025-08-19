@@ -23,13 +23,13 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: {
-    default: "Afonso Ribeiro",
-    template: "%s | Afonso Ribeiro",
+    default: 'Afonso Ribeiro',
+    template: '%s | Afonso Ribeiro',
   },
   description:
     "Afonso Ribeiro's personal website. Software Engineer specializing in AI and Cybersecurity.",
   keywords: [
-    "Afonso Ribeiro",
+    'Afonso Ribeiro',
     'Software Engineer',
     'AI',
     'Cybersecurity',
@@ -38,22 +38,22 @@ export const metadata: Metadata = {
     'TypeScript',
     'Rust',
   ],
-  authors: [{ name: "Afonso Ribeiro" }],
-  creator: "Afonso Ribeiro",
+  authors: [{ name: 'Afonso Ribeiro' }],
+  creator: 'Afonso Ribeiro',
   metadataBase: new URL('https://deadstrobe5.github.io'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://deadstrobe5.github.io',
-    siteName: "Afonso Ribeiro",
-    title: "Afonso Ribeiro",
+    siteName: 'Afonso Ribeiro',
+    title: 'Afonso Ribeiro',
     description: 'Software Engineer specializing in AI and Cybersecurity',
     images: [
       {
         url: '/images/me.jpg',
         width: 1200,
         height: 630,
-        alt: "Afonso Ribeiro",
+        alt: 'Afonso Ribeiro',
       },
     ],
   },
